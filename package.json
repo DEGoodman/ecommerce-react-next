@@ -1,0 +1,35 @@
+{
+  "name": "ecommerce-learning-platform",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Progressive e-commerce platform for learning React, TypeScript, Next.js, and NestJS",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --parallel -r dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "clean": "pnpm -r clean && rm -rf node_modules",
+    "frontend:dev": "pnpm --filter @ecommerce/frontend dev",
+    "backend:dev": "pnpm --filter @ecommerce/backend dev",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "keywords": [
+    "ecommerce",
+    "learning",
+    "nextjs",
+    "nestjs",
+    "react",
+    "typescript"
+  ]
+}
