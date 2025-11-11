@@ -1,7 +1,22 @@
+# E-Commerce Learning Platform - Docker Compose
+#
+# This docker-compose file supports all learning phases (CRAWL, WALK, RUN, OPTIMIZE)
+# Current setup: RUN phase (NestJS + Next.js + PostgreSQL)
+#
+# For CRAWL phase: See docs/phases/01-crawl.md for React + Vite setup
+# For WALK phase: Current frontend (Next.js) + simplified backend works
+# For RUN phase: Add microservices (see docker-compose.run.yml)
+# For OPTIMIZE: Add Redis, CDN config, monitoring (see docker-compose.optimize.yml)
+
 version: '3.8'
 
 services:
-  # PostgreSQL Database
+  # ============================================================================
+  # DATABASE SERVICES
+  # ============================================================================
+
+  # PostgreSQL - Primary Database
+  # Used in all phases (CRAWL, WALK, RUN, OPTIMIZE)
   postgres:
     image: postgres:16-alpine
     container_name: ecommerce-postgres
@@ -14,13 +29,36 @@ services:
       - '5432:5432'
     volumes:
       - postgres-data:/var/lib/postgresql/data
+      # Uncomment to add init scripts for your phase
+      # - ./init-scripts/crawl.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: ['CMD-SHELL', 'pg_isready -U postgres']
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - ecommerce-network
 
-  # Backend API (NestJS)
+  # Redis - Caching (WALK phase onwards)
+  # Uncomment for WALK, RUN, and OPTIMIZE phases
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: ecommerce-redis
+  #   restart: unless-stopped
+  #   ports:
+  #     - '6379:6379'
+  #   volumes:
+  #     - redis-data:/data
+  #   networks:
+  #     - ecommerce-network
+
+  # ============================================================================
+  # APPLICATION SERVICES
+  # ============================================================================
+
+  # Backend API (NestJS - RUN phase)
+  # For CRAWL phase: Replace with simple Express server
+  # For WALK phase: Use Next.js API routes or keep this simplified
   backend:
     build:
       context: ./apps/backend
@@ -39,6 +77,9 @@ services:
       DB_NAME: ecommerce
       JWT_SECRET: dev-secret-change-in-production
       CORS_ORIGIN: http://localhost:3000
+      # Redis connection (uncomment for WALK+)
+      # REDIS_HOST: redis
+      # REDIS_PORT: 6379
     depends_on:
       postgres:
         condition: service_healthy
@@ -46,8 +87,11 @@ services:
       - ./apps/backend/src:/app/src
       - /app/node_modules
     command: npm run dev
+    networks:
+      - ecommerce-network
 
-  # Frontend (Next.js)
+  # Frontend (Next.js - WALK/RUN phase)
+  # For CRAWL phase: Replace with React + Vite setup
   frontend:
     build:
       context: ./apps/frontend
@@ -58,6 +102,8 @@ services:
       - '3000:3000'
     environment:
       NEXT_PUBLIC_API_URL: http://localhost:3001/api
+      # For RUN phase with GraphQL
+      # NEXT_PUBLIC_GRAPHQL_URL: http://localhost:3000/graphql
     depends_on:
       - backend
     volumes:
@@ -65,6 +111,82 @@ services:
       - /app/node_modules
       - /app/.next
     command: npm run dev
+    networks:
+      - ecommerce-network
+
+  # ============================================================================
+  # MICROSERVICES (RUN phase only)
+  # ============================================================================
+  # Uncomment these when you reach the RUN phase
+  # See docs/phases/03-run.md for full microservices setup
+
+  # # Message Queue (RabbitMQ)
+  # rabbitmq:
+  #   image: rabbitmq:3-management-alpine
+  #   container_name: ecommerce-rabbitmq
+  #   restart: unless-stopped
+  #   ports:
+  #     - '5672:5672'
+  #     - '15672:15672'
+  #   environment:
+  #     RABBITMQ_DEFAULT_USER: admin
+  #     RABBITMQ_DEFAULT_PASS: admin
+  #   networks:
+  #     - ecommerce-network
+
+  # # Search Service (Elasticsearch)
+  # elasticsearch:
+  #   image: elasticsearch:8.8.0
+  #   container_name: ecommerce-elasticsearch
+  #   environment:
+  #     - discovery.type=single-node
+  #     - xpack.security.enabled=false
+  #   ports:
+  #     - '9200:9200'
+  #   volumes:
+  #     - elasticsearch-data:/usr/share/elasticsearch/data
+  #   networks:
+  #     - ecommerce-network
+
+  # ============================================================================
+  # MONITORING & OBSERVABILITY (OPTIMIZE phase)
+  # ============================================================================
+  # Uncomment for OPTIMIZE phase
+  # See docs/phases/04-optimize.md
+
+  # # Prometheus - Metrics Collection
+  # prometheus:
+  #   image: prom/prometheus
+  #   container_name: ecommerce-prometheus
+  #   ports:
+  #     - '9090:9090'
+  #   volumes:
+  #     - ./infrastructure/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+  #     - prometheus-data:/prometheus
+  #   networks:
+  #     - ecommerce-network
+
+  # # Grafana - Metrics Visualization
+  # grafana:
+  #   image: grafana/grafana
+  #   container_name: ecommerce-grafana
+  #   ports:
+  #     - '3002:3000'
+  #   environment:
+  #     GF_SECURITY_ADMIN_PASSWORD: admin
+  #   volumes:
+  #     - grafana-data:/var/lib/grafana
+  #   networks:
+  #     - ecommerce-network
+
+networks:
+  ecommerce-network:
+    driver: bridge
 
 volumes:
   postgres-data:
+  # Uncomment as needed for different phases
+  # redis-data:
+  # elasticsearch-data:
+  # prometheus-data:
+  # grafana-data:

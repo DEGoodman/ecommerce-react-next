@@ -1,364 +1,462 @@
-# E-Commerce Learning Platform
+# E-Commerce Learning Platform: Crawl-Walk-Run
 
-A comprehensive, progressively complex e-commerce application designed for learning and mastering React, TypeScript, Next.js, and NestJS. This project serves both as documentation for study and as an interactive development environment.
+A progressive e-commerce application designed to take you from React/TypeScript fundamentals all the way to enterprise-grade architecture with NestJS. Learn by building a real-world application with Docker from day one.
 
-## Project Philosophy
+## 🎯 What Makes This Different?
 
-This project starts with the simplest implementations and progressively scales to enterprise-grade architecture, including:
-- Basic CRUD operations → Advanced state management
-- Simple API calls → GraphQL and real-time subscriptions
-- Local development → Cloud-native microservices
-- Manual testing → Comprehensive CI/CD pipelines
-- Basic features → AI-powered recommendations and search
+This isn't just another tutorial. It's a **complete learning journey** structured around the "crawl-walk-run" methodology:
 
-## Quick Start
+- **🐛 CRAWL**: Master React and TypeScript fundamentals with a simple, working e-commerce site
+- **🚶 WALK**: Add production patterns, Next.js, authentication, and better architecture
+- **🏃 RUN**: Build enterprise-grade systems with NestJS, microservices, and GraphQL
+- **🚀 OPTIMIZE**: Learn performance techniques used by the best (McMaster-Carr, Amazon, etc.)
+
+### Key Features
+✅ **Docker from Day One** - All phases use containers
+✅ **Progressive Complexity** - Start simple, scale to enterprise
+✅ **Real-World Patterns** - Industry-standard practices
+✅ **Performance Focus** - Optimization techniques from top e-commerce sites
+✅ **Comprehensive Docs** - Deep-dive guides for every concept
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ (use nvm: `nvm use`)
+- Node.js 18+ (`nvm use`)
 - pnpm 8+ (`npm install -g pnpm`)
-- Docker & Docker Compose (for containerized development)
+- Docker & Docker Compose
 
-### Installation
+### Get Started in 3 Steps
 
 ```bash
-# Clone the repository
+# 1. Clone and navigate
 git clone <your-repo-url>
-cd ecommerce-js
+cd ecommerce-learning-platform
 
-# Install dependencies
-make install
+# 2. Install dependencies
+pnpm install
 
-# Start services with Docker (recommended)
-make docker-up
-
-# OR run locally
-make dev
+# 3. Start with Docker (recommended)
+docker-compose up
 ```
 
 Visit:
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:3001
-- API Health: http://localhost:3001/api/health
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:3001/api
+- **API Health**: http://localhost:3001/api/health
 
-## Project Structure
+---
 
-```
-ecommerce-js/
-├── apps/
-│   ├── frontend/          # Next.js 14 application
-│   │   ├── src/
-│   │   │   ├── app/       # App Router pages
-│   │   │   ├── components/ # React components
-│   │   │   ├── lib/       # Utilities & API client
-│   │   │   └── types/     # TypeScript definitions
-│   │   └── Dockerfile
-│   └── backend/           # NestJS application
-│       ├── src/
-│       │   ├── products/  # Product module
-│       │   ├── users/     # User module
-│       │   ├── auth/      # Authentication
-│       │   ├── cart/      # Shopping cart
-│       │   └── orders/    # Order management
-│       └── Dockerfile
-├── packages/              # Shared packages (future)
-├── docs/                  # Learning documentation
-├── docker-compose.yml     # Multi-container setup
-├── Makefile              # Development commands
-└── README.md
-```
+## 📚 Learning Path
 
-## Technology Stack
+### Choose Your Starting Point
 
-### Frontend
-- **Next.js 14** - React framework with App Router
-- **React 18** - UI library with Server Components
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Utility-first styling
-- **Zustand** - State management
-- **React Query** - Server state management
+<table>
+<tr>
+<td width="25%">
 
-### Backend
-- **NestJS** - Progressive Node.js framework
-- **TypeORM** - Object-Relational Mapping
-- **PostgreSQL** - Relational database
-- **Passport & JWT** - Authentication
-- **Class Validator** - DTO validation
+### 🐛 **CRAWL**
+*2-4 weeks*
 
-### DevOps
-- **Docker** - Containerization
-- **Docker Compose** - Multi-container orchestration
-- **pnpm** - Fast, disk-efficient package manager
-- **Makefile** - Task automation
+**For:** Beginners
 
-## Learning Roadmap
+**Learn:**
+- React basics
+- TypeScript
+- Simple APIs
+- Docker basics
 
-### Phase 1: Fundamentals (Current)
-*Status: ✅ Implemented*
+**Build:**
+- Product listing
+- Shopping cart
+- Basic backend
 
-**Concepts Covered:**
-- [x] Monorepo setup with workspaces
-- [x] TypeScript configuration
-- [x] Next.js App Router
-- [x] NestJS modules & dependency injection
-- [x] RESTful API design
-- [x] Database entities with TypeORM
-- [x] Docker containerization
-- [x] Environment configuration
+[Start Here →](docs/phases/01-crawl.md)
 
-**What to Learn:**
-1. **React & Next.js Basics**
-   - Component structure (see: `apps/frontend/src/components/ProductCard.tsx`)
-   - Server vs Client Components
-   - App Router navigation
-   - Styling with Tailwind CSS
+</td>
+<td width="25%">
 
-2. **NestJS Architecture**
-   - Controllers (HTTP endpoints)
-   - Services (business logic)
-   - Modules (feature organization)
-   - DTOs (data validation)
-   - See: `apps/backend/src/products/`
+### 🚶 **WALK**
+*3-6 weeks*
 
-3. **TypeScript**
-   - Interface definitions (`apps/frontend/src/types/index.ts`)
-   - Type-safe API calls
-   - Generics and utility types
+**For:** Intermediate
 
-4. **Database with TypeORM**
-   - Entity definitions
-   - Repository pattern
-   - Migrations (upcoming)
+**Learn:**
+- Next.js 14
+- Authentication
+- State management
+- Testing
 
-**Exercises:**
-- [ ] Add a new field to Product entity
-- [ ] Create a new component for displaying categories
-- [ ] Add filtering by price range
-- [ ] Implement pagination for products
+**Build:**
+- User auth
+- Checkout flow
+- Search
+- Order history
 
-### Phase 2: Intermediate Features (Next Steps)
-*Status: 🚧 Planned*
+[Continue →](docs/phases/02-walk.md)
 
-**Features to Implement:**
-- [ ] User authentication with JWT
-- [ ] Protected routes and route guards
-- [ ] Shopping cart with session management
-- [ ] Checkout flow
-- [ ] Order history
-- [ ] Image upload and management
-- [ ] Search functionality
-- [ ] Advanced filtering & sorting
+</td>
+<td width="25%">
 
-**Concepts to Learn:**
-- JWT authentication flow
-- State management with Zustand
-- Form handling with React Hook Form
-- File uploads
-- Error handling & loading states
-- Optimistic updates
-- Server-side rendering strategies
+### 🏃 **RUN**
+*4-8 weeks*
 
-**Documentation to Read:**
-- `docs/02-authentication.md` (to be created)
-- `docs/03-state-management.md` (to be created)
+**For:** Advanced
 
-### Phase 3: Advanced Patterns (Future)
-*Status: 📋 Planned*
+**Learn:**
+- NestJS
+- Microservices
+- GraphQL
+- Event-driven
 
-**Features:**
-- [ ] Real-time notifications with WebSockets
-- [ ] Payment integration (Stripe)
-- [ ] Advanced caching strategies
-- [ ] GraphQL API
-- [ ] Microservices architecture
-- [ ] Event-driven patterns
-- [ ] CQRS implementation
+**Build:**
+- Microservices
+- Real-time features
+- Payment integration
+- Admin dashboard
 
-**Concepts:**
-- WebSocket communication
-- Event sourcing
-- Message queues (RabbitMQ/Redis)
-- API Gateway pattern
-- Service mesh
+[Advance →](docs/phases/03-run.md)
 
-### Phase 4: Enterprise & Scale (Advanced)
-*Status: 📋 Planned*
+</td>
+<td width="25%">
 
-**Features:**
-- [ ] Kubernetes deployment
-- [ ] CI/CD pipelines (GitHub Actions)
-- [ ] Monitoring & logging (Prometheus/Grafana)
-- [ ] Performance optimization
-- [ ] Load balancing
-- [ ] Database replication
-- [ ] CDN integration
-- [ ] Multi-region deployment
+### 🚀 **OPTIMIZE**
+*Ongoing*
 
-**Concepts:**
-- Container orchestration
-- Infrastructure as Code (Terraform)
-- Observability
+**For:** Everyone
+
+**Learn:**
 - Performance tuning
-- Scalability patterns
+- Caching strategies
+- CDN setup
+- Monitoring
 
-### Phase 5: AI & Modern Features (Cutting Edge)
-*Status: 📋 Planned*
+**Achieve:**
+- Lighthouse 95+
+- Sub-second loads
+- Scale to millions
+- Zero downtime
 
-**Features:**
-- [ ] AI-powered product recommendations
-- [ ] Semantic search with vector databases
-- [ ] Chatbot customer support
-- [ ] Image recognition for product search
-- [ ] Dynamic pricing algorithms
-- [ ] Fraud detection
+[Optimize →](docs/phases/04-optimize.md)
 
-**Concepts:**
-- OpenAI API integration
-- Vector embeddings
-- Machine learning model integration
-- Real-time AI inference
+</td>
+</tr>
+</table>
 
-## Development Commands
+**📖 [Complete Learning Path Guide](CRAWL-WALK-RUN.md)**
+
+---
+
+## 🏗️ Project Structure
+
+```
+ecommerce-learning-platform/
+├── apps/
+│   ├── frontend/          # Next.js 14 application (WALK/RUN)
+│   ├── backend/           # NestJS application (RUN)
+│   └── [phase-specific]/  # Additional phase implementations
+├── docs/
+│   ├── phases/            # Phase-specific guides
+│   │   ├── 01-crawl.md
+│   │   ├── 02-walk.md
+│   │   ├── 03-run.md
+│   │   └── 04-optimize.md
+│   ├── 00-architecture.md
+│   ├── 01-frontend.md
+│   ├── 02-backend.md
+│   ├── 03-database.md
+│   └── 04-docker.md
+├── CRAWL-WALK-RUN.md      # Complete learning guide
+├── QUICKSTART.md          # Quick setup guide
+├── docker-compose.yml     # Multi-container setup
+└── Makefile              # Development commands
+```
+
+---
+
+## 🛠️ Technology Stack
+
+### CRAWL Phase
+- React 18 + TypeScript + Vite
+- Express.js or JSON Server
+- PostgreSQL (Docker)
+- Plain CSS or Tailwind
+
+### WALK Phase
+- Next.js 14 + TypeScript
+- Express.js (structured)
+- PostgreSQL + Prisma
+- Zustand/Redux
+- NextAuth.js
+
+### RUN Phase
+- Next.js 14 (advanced)
+- NestJS + Microservices
+- PostgreSQL + Redis + MongoDB
+- GraphQL + WebSockets
+- RabbitMQ
+- Elasticsearch
+
+### OPTIMIZE Phase
+- All of the above + Performance monitoring
+- CDN (CloudFront/Cloudflare)
+- Prometheus + Grafana
+- Real User Monitoring
+
+---
+
+## 🎓 Learning Outcomes by Phase
+
+### After CRAWL, you'll understand:
+✅ React component composition
+✅ TypeScript type safety
+✅ State management basics
+✅ REST API fundamentals
+✅ Docker containerization
+
+### After WALK, you'll understand:
+✅ Next.js App Router & Server Components
+✅ Authentication & authorization flows
+✅ Advanced state management
+✅ Form validation patterns
+✅ Testing strategies
+
+### After RUN, you'll understand:
+✅ NestJS architecture & DI
+✅ Microservices communication
+✅ Event-driven architecture
+✅ GraphQL API design
+✅ Production deployment
+
+### After OPTIMIZE, you'll understand:
+✅ Performance optimization techniques
+✅ Caching strategies (multi-layer)
+✅ CDN configuration
+✅ Monitoring & observability
+✅ Real-world scale challenges
+
+---
+
+## 💻 Development Commands
 
 ```bash
-# View all available commands
+# View all commands
 make help
 
-# Development
-make dev              # Run all services locally
-make dev-frontend     # Run only frontend
-make dev-backend      # Run only backend
+# Development (local)
+make dev              # Run all services
+make dev-frontend     # Frontend only
+make dev-backend      # Backend only
 
-# Docker
-make docker-up        # Start all services with Docker
+# Docker (recommended)
+make docker-up        # Start all services
 make docker-down      # Stop all services
 make docker-logs      # View logs
-make docker-clean     # Clean up containers and volumes
+make docker-restart   # Restart services
+make docker-clean     # Clean containers & volumes
 
 # Database
-make db-shell         # Open PostgreSQL shell
+make db-shell         # PostgreSQL shell
 make db-reset         # Reset database
 
-# Testing & Quality
+# Quality
 make test             # Run tests
 make lint             # Run linters
 make format           # Format code
 
 # Build
-make build            # Build production bundles
-make clean            # Clean build artifacts
+make build            # Production build
+make clean            # Clean artifacts
 ```
 
-## API Endpoints
+---
 
-### Products
-- `GET /api/products` - List all products
-- `GET /api/products?category=electronics` - Filter by category
-- `GET /api/products/:id` - Get single product
-- `POST /api/products` - Create product
-- `PATCH /api/products/:id` - Update product
-- `DELETE /api/products/:id` - Delete product
+## 🌟 Why McMaster-Carr Inspired?
 
-### Health Check
-- `GET /api/health` - Service health status
+McMaster-Carr runs one of the fastest, most efficient e-commerce sites on the internet. Their techniques include:
 
-### Coming Soon
-- Authentication (`/api/auth/*`)
-- Cart management (`/api/cart/*`)
-- Order management (`/api/orders/*`)
+- ⚡ **Minimal JavaScript** - Site works without JS
+- 🎯 **Server-side rendering** - Instant page loads
+- 💾 **Aggressive caching** - Smart cache strategies
+- 🖼️ **Optimized images** - Right size, modern formats
+- 🔍 **Lightning-fast search** - Sub-50ms responses
 
-## Documentation
+**The OPTIMIZE phase** teaches you these techniques and more, showing you how to build world-class performance into your applications.
 
-Detailed learning guides are available in the `docs/` directory:
+[Read the McMaster-Carr Case Study →](docs/phases/04-optimize-mcmaster.md)
 
+---
+
+## 📖 Documentation
+
+### Getting Started
+- [Quick Start Guide](QUICKSTART.md)
+- [Complete Crawl-Walk-Run Guide](CRAWL-WALK-RUN.md)
+
+### Architecture & Concepts
 - [Architecture Overview](docs/00-architecture.md)
 - [Frontend Guide](docs/01-frontend.md)
 - [Backend Guide](docs/02-backend.md)
 - [Database Design](docs/03-database.md)
 - [Docker & Deployment](docs/04-docker.md)
 
-## Best Practices Demonstrated
+### Phase Guides
+- [Phase 1: CRAWL - React Fundamentals](docs/phases/01-crawl.md)
+- [Phase 2: WALK - Production Patterns](docs/phases/02-walk.md)
+- [Phase 3: RUN - Enterprise Architecture](docs/phases/03-run.md)
+- [Phase 4: OPTIMIZE - Performance](docs/phases/04-optimize.md)
 
-### Code Organization
-- Feature-based module structure
-- Separation of concerns
-- Dependency injection
-- Repository pattern
+---
 
-### Type Safety
-- End-to-end TypeScript
-- Shared type definitions
-- DTO validation
-- API response typing
+## 🎯 Your First Steps
 
-### Development Experience
-- Hot module reloading
-- Docker for consistent environments
-- Makefile for common tasks
-- Clear error messages
+### Complete Beginner?
+1. Read [CRAWL-WALK-RUN.md](CRAWL-WALK-RUN.md) to understand the journey
+2. Start with [CRAWL Phase Guide](docs/phases/01-crawl.md)
+3. Build the product listing feature
+4. Don't skip ahead - master fundamentals first
 
-### Security
-- Environment variable management
-- Password hashing (bcrypt)
-- SQL injection prevention (TypeORM)
-- CORS configuration
+### Some Experience?
+1. Quick review of CRAWL concepts
+2. Jump into [WALK Phase](docs/phases/02-walk.md)
+3. Focus on patterns you haven't used
+4. Build real features, not just tutorials
 
-## Troubleshooting
+### Experienced Developer?
+1. Skim CRAWL & WALK
+2. Deep dive into [RUN Phase](docs/phases/03-run.md)
+3. Study microservices architecture
+4. Focus on [OPTIMIZE Phase](docs/phases/04-optimize.md)
 
-### Port conflicts
-If ports 3000, 3001, or 5432 are in use:
-```bash
-# Check what's using the port
-lsof -i :3000
-lsof -i :3001
-lsof -i :5432
+---
 
-# Kill the process or change ports in docker-compose.yml
-```
+## 🔥 Current Features
 
-### Database connection issues
-```bash
-# Reset the database
-make db-reset
+### Implemented (RUN Phase Preview)
+- ✅ Product CRUD operations
+- ✅ RESTful API with NestJS
+- ✅ PostgreSQL database with TypeORM
+- ✅ Next.js 14 frontend
+- ✅ Docker containerization
+- ✅ TypeScript end-to-end
 
-# Or restart Docker services
-make docker-restart
-```
+### Coming in WALK Phase
+- 🚧 User authentication (JWT)
+- 🚧 Shopping cart persistence
+- 🚧 Checkout flow
+- 🚧 Order management
+- 🚧 Product search
+- 🚧 Image uploads
 
-### Dependencies issues
-```bash
-# Clean and reinstall
-make clean
-pnpm install
-```
+### Coming in RUN Phase
+- 📋 Microservices architecture
+- 📋 GraphQL API
+- 📋 Real-time features (WebSockets)
+- 📋 Payment integration
+- 📋 Event-driven patterns
+- 📋 Advanced caching
 
-## Contributing
+### Coming in OPTIMIZE Phase
+- 📋 Performance monitoring
+- 📋 CDN integration
+- 📋 Image optimization
+- 📋 Search optimization
+- 📋 Lighthouse 95+ score
+- 📋 Load testing & tuning
+
+---
+
+## 🤝 Contributing & Learning Together
 
 This is a learning project! Feel free to:
-1. Experiment with the code
-2. Add new features
-3. Improve documentation
-4. Share your learnings
+- Experiment and break things
+- Add new features beyond the curriculum
+- Improve documentation
+- Share your learnings
+- Ask questions in issues
 
-## Resources
+---
+
+## 📚 External Resources
 
 ### Official Documentation
-- [Next.js Docs](https://nextjs.org/docs)
-- [NestJS Docs](https://docs.nestjs.com)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
-- [TypeORM Guide](https://typeorm.io)
-- [React Docs](https://react.dev)
+- [React Docs](https://react.dev) - Modern React documentation
+- [Next.js Docs](https://nextjs.org/docs) - Next.js 14 App Router
+- [NestJS Docs](https://docs.nestjs.com) - NestJS framework
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/) - TypeScript guide
+- [TypeORM Guide](https://typeorm.io) - Database ORM
 
 ### Learning Paths
-- [Next.js Learn](https://nextjs.org/learn)
-- [NestJS Courses](https://courses.nestjs.com)
-- [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
+- [Next.js Learn](https://nextjs.org/learn) - Interactive tutorial
+- [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/) - TS book
+- [React Testing Library](https://testing-library.com/react) - Testing guide
 
-## License
+### Performance
+- [web.dev](https://web.dev) - Google's web performance guides
+- [Core Web Vitals](https://web.dev/vitals/) - Performance metrics
+- [McMaster-Carr](https://www.mcmaster.com) - Study this site's performance!
+
+---
+
+## 📊 Progress Tracking
+
+Track your progress through the phases:
+
+```bash
+# Check which phase you're on
+cat .learning-progress
+
+# Mark phase as complete
+echo "CRAWL_COMPLETE=true" >> .learning-progress
+```
+
+Or use the built-in tracking in each phase's documentation.
+
+---
+
+## 🎓 Learning Philosophy
+
+> "Make it work, make it right, make it fast - in that order." — Kent Beck
+
+- **CRAWL = Make it work** (functionality first)
+- **WALK = Make it right** (patterns and architecture)
+- **RUN = Make it enterprise** (scale and advanced features)
+- **OPTIMIZE = Make it fast** (performance and efficiency)
+
+---
+
+## 🚀 Ready to Start?
+
+1. **Read this README** ✅ (you're here!)
+2. **Read [CRAWL-WALK-RUN.md](CRAWL-WALK-RUN.md)** to understand the full journey
+3. **Choose your phase** based on your experience
+4. **Start building** and learning by doing
+5. **Track your progress** with the checklists
+6. **Share your learnings** with the community
+
+---
+
+## 📞 Getting Help
+
+- **Documentation**: Check `docs/` directory first
+- **Issues**: Open a GitHub issue for bugs or questions
+- **Discussions**: Use GitHub Discussions for general questions
+
+---
+
+## 📄 License
 
 MIT - This is a learning project, feel free to use it however you'd like!
 
 ---
 
+<div align="center">
+
+**🎯 Start Your Journey: [CRAWL-WALK-RUN.md](CRAWL-WALK-RUN.md)**
+
+Master e-commerce development from fundamentals to enterprise-grade architecture.
+
 **Happy Learning! 🚀**
 
-Start with Phase 1 exercises and gradually work your way up. Remember: the best way to learn is by building!
+</div>
