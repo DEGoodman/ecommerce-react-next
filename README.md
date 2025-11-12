@@ -431,6 +431,70 @@ This is a learning project! Feel free to:
 
 ---
 
+## 🤖 Using Claude for Study Sessions
+
+This project is designed for **interactive learning with Claude**! Whether you're on your laptop, CLI, or different device, Claude can quickly jump into helping you.
+
+### Quick Start with Claude
+
+Just open a conversation and say:
+
+```
+"Hi Claude! Let's start Sprint Day 1"
+```
+
+or
+
+```
+"Claude, I want to practice Next.js Server Components from the WALK phase"
+```
+
+Claude has context about:
+- ✅ All learning phases (CRAWL, WALK, RUN, OPTIMIZE)
+- ✅ Both interview tracks (Sprint & Deep Dive)
+- ✅ Every topic and where to find it
+- ✅ How to run interactive study sessions
+
+### Command Reference
+
+Check **[`.claude/quick-commands.md`](.claude/quick-commands.md)** for ready-to-use commands like:
+
+**Interview Prep:**
+- `"Let's start Sprint Day 1"`
+- `"Quiz me on Deep Dive Day 3 questions"`
+- `"Mock interview me on system design"`
+
+**Learning:**
+- `"Teach me CRAWL phase fundamentals"`
+- `"Explain Next.js from WALK phase"`
+- `"How does CQRS work in RUN phase?"`
+
+**Practice:**
+- `"Design an e-commerce checkout flow"`
+- `"Review this code with me"`
+- `"Let's practice the Day 2 exercises"`
+
+### What Claude Can Do
+
+Claude will:
+- 🎯 Guide you through interactive exercises
+- 💡 Ask probing questions like an interviewer
+- 📝 Review your code and provide feedback
+- 🎭 Simulate mock interviews
+- 🧠 Explain concepts with examples
+- 🔗 Connect topics across phases
+
+### Context Files
+
+The `.claude/` directory contains:
+- **project-context.md** - Full project overview for Claude
+- **quick-commands.md** - Command reference for you
+- **README.md** - How the context system works
+
+These files ensure Claude always understands the project structure and can help you effectively, no matter which device you're using!
+
+---
+
 ## 📚 External Resources
 
 ### Official Documentation
