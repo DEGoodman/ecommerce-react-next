@@ -67,8 +67,8 @@ I'll help you structure a great answer covering:
 ```
 1. "How would you type a product catalog API response in TypeScript?"
 2. "Explain the difference between useState and useReducer"
-3. "How would you optimize a product list with 1000 items?"
-4. "What's the difference between Server and Client Components in Next.js?"
+3. "How would you handle errors in a React component?"
+4. "When would you use useCallback vs useMemo?"
 ```
 
 **Day 1 Checkpoint:**
@@ -147,9 +147,9 @@ I'll help you cover:
 
 **Practice Questions:**
 ```
-1. "How would you handle adding an out-of-stock item to cart?"
-2. "Explain NestJS dependency injection benefits"
-3. "When would you use GraphQL over REST?"
+1. "What's the difference between Server and Client Components in Next.js?"
+2. "How would you optimize a product list with 1000 items?"
+3. "Explain NestJS dependency injection benefits"
 4. "How do you prevent N+1 query problems?"
 ```
 
