@@ -150,7 +150,7 @@ I'll help you cover:
 1. "What's the difference between Server and Client Components in Next.js?"
 2. "How would you optimize a product list with 1000 items?"
 3. "Explain NestJS dependency injection benefits"
-4. "How do you prevent N+1 query problems?"
+4. "When would you use GraphQL over REST?"
 ```
 
 **Day 2 Checkpoint:**
