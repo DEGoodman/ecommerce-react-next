@@ -48,6 +48,59 @@ Visit:
 
 ---
 
+## 🎯 Interview Preparation Tracks
+
+**Got an interview coming up?** We've got you covered with time-optimized study guides:
+
+### 📚 Choose Your Track
+
+<table>
+<tr>
+<td width="50%">
+
+### ⚡ **3-Day Sprint**
+*Total: 6 hours (2hrs/day)*
+
+**Perfect for:**
+- Interview in 3 days
+- Limited study time
+- Quick refresher needed
+
+**Covers:**
+- Core concepts & talking points
+- Top 20 interview questions
+- System design essentials
+- Performance fundamentals
+
+**[Start Sprint →](INTERVIEW-SPRINT.md)**
+
+</td>
+<td width="50%">
+
+### 🎓 **7-Day Deep Dive**
+*Total: 15-20 hours*
+
+**Perfect for:**
+- Technical interview next week
+- More prep time available
+- Hands-on practice needed
+
+**Covers:**
+- 50+ interview questions
+- Live coding practice
+- System design scenarios
+- Mock interviews with Claude
+
+**[Start Deep Dive →](INTERVIEW-DEEP-DIVE.md)**
+
+</td>
+</tr>
+</table>
+
+**💡 Both tracks are designed for interactive study with Claude** - practice system design, code reviews, and get instant feedback!
+
+---
+
 ## 📚 Learning Path
 
 ### Choose Your Starting Point
