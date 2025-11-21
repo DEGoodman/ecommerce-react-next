@@ -17,8 +17,6 @@ The "crawl-walk-run" approach ensures you:
 
 **Goal:** Build a working e-commerce app using React and TypeScript fundamentals
 
-**Timeline:** 2-4 weeks for beginners
-
 ### What You'll Learn
 - React basics: components, props, state, hooks
 - TypeScript fundamentals: types, interfaces, generics
@@ -104,8 +102,6 @@ apps/crawl/
 ## 🚶 Phase 2: WALK - Intermediate Patterns
 
 **Goal:** Introduce production patterns and better architecture
-
-**Timeline:** 3-6 weeks
 
 ### What You'll Learn
 - Next.js App Router and Server Components
@@ -213,8 +209,6 @@ apps/walk/
 ## 🏃 Phase 3: RUN - Enterprise Architecture
 
 **Goal:** Build production-ready, scalable architecture with NestJS
-
-**Timeline:** 4-8 weeks
 
 ### What You'll Learn
 - NestJS architecture and best practices
@@ -332,8 +326,6 @@ apps/run/
 ## 🚀 Phase 4: OPTIMIZE - Performance & Scale
 
 **Goal:** Master optimization techniques used by top e-commerce sites like McMaster-Carr
-
-**Timeline:** Ongoing
 
 ### What You'll Learn
 McMaster-Carr is renowned for having one of the fastest, most efficient e-commerce sites. This phase focuses on their techniques and other industry-leading optimization strategies.
@@ -485,28 +477,27 @@ const TARGET_METRICS = {
 ## 🎓 Learning Path Recommendations
 
 ### For Complete Beginners
-1. Start with CRAWL phase - spend 4-6 weeks here
+1. Start with CRAWL phase
 2. Build all exercises before moving on
 3. Read React and TypeScript docs thoroughly
 4. Focus on understanding, not speed
 
 ### For Developers with Some Experience
-1. Quick review of CRAWL (1 week)
-2. Focus on WALK phase (4-6 weeks)
+1. Quick review of CRAWL
+2. Focus on WALK phase
 3. Build real features, not just tutorials
 4. Study the "why" behind patterns
 
 ### For Experienced Developers
-1. Skim CRAWL, review WALK (1-2 weeks)
-2. Deep dive into RUN phase (4-6 weeks)
+1. Skim CRAWL, review WALK
+2. Deep dive into RUN phase
 3. Focus on architecture patterns
-4. Contribute optimizations
+4. Implement optimizations
 
 ### For Everyone
 - **OPTIMIZE phase is ongoing** - performance is a continuous journey
 - Revisit earlier phases with new knowledge
 - Build your own features beyond the curriculum
-- Share your learnings with others
 
 ---
 

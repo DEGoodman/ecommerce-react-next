@@ -48,59 +48,6 @@ Visit:
 
 ---
 
-## 🎯 Interview Preparation Tracks
-
-**Got an interview coming up?** We've got you covered with time-optimized study guides:
-
-### 📚 Choose Your Track
-
-<table>
-<tr>
-<td width="50%">
-
-### ⚡ **3-Day Sprint**
-*Total: 6 hours (2hrs/day)*
-
-**Perfect for:**
-- Interview in 3 days
-- Limited study time
-- Quick refresher needed
-
-**Covers:**
-- Core concepts & talking points
-- Top 20 interview questions
-- System design essentials
-- Performance fundamentals
-
-**[Start Sprint →](INTERVIEW-SPRINT.md)**
-
-</td>
-<td width="50%">
-
-### 🎓 **7-Day Deep Dive**
-*Total: 15-20 hours*
-
-**Perfect for:**
-- Technical interview next week
-- More prep time available
-- Hands-on practice needed
-
-**Covers:**
-- 50+ interview questions
-- Live coding practice
-- System design scenarios
-- Mock interviews with Claude
-
-**[Start Deep Dive →](INTERVIEW-DEEP-DIVE.md)**
-
-</td>
-</tr>
-</table>
-
-**💡 Both tracks are designed for interactive study with Claude** - practice system design, code reviews, and get instant feedback!
-
----
-
 ## 📚 Learning Path
 
 ### Choose Your Starting Point
@@ -206,9 +153,12 @@ Visit:
 ```
 ecommerce-learning-platform/
 ├── apps/
-│   ├── frontend/          # Next.js 14 application (WALK/RUN)
-│   ├── backend/           # NestJS application (RUN)
-│   └── [phase-specific]/  # Additional phase implementations
+│   ├── crawl/             # CRAWL phase (React + Vite + Express)
+│   │   ├── frontend/      # React 18 + TypeScript
+│   │   ├── backend/       # Express.js + TypeScript
+│   │   └── docker-compose.yml
+│   ├── frontend/          # WALK/RUN phase - Next.js 14
+│   └── backend/           # WALK/RUN phase - NestJS
 ├── docs/
 │   ├── phases/            # Phase-specific guides
 │   │   ├── 01-crawl.md
@@ -221,8 +171,7 @@ ecommerce-learning-platform/
 │   ├── 03-database.md
 │   └── 04-docker.md
 ├── CRAWL-WALK-RUN.md      # Complete learning guide
-├── QUICKSTART.md          # Quick setup guide
-├── docker-compose.yml     # Multi-container setup
+├── docker-compose.yml     # WALK/RUN multi-container setup
 └── Makefile              # Development commands
 ```
 
@@ -297,10 +246,9 @@ ecommerce-learning-platform/
 # View all commands
 make help
 
-# Development (local)
-make dev              # Run all services
-make dev-frontend     # Frontend only
-make dev-backend      # Backend only
+# Learning Phases
+make crawl            # Start CRAWL phase (React + Vite + Express)
+make walk-run         # Start WALK/RUN phase (Next.js + NestJS)
 
 # Docker (recommended)
 make docker-up        # Start all services
@@ -431,67 +379,22 @@ This is a learning project! Feel free to:
 
 ---
 
-## 🤖 Using Claude for Study Sessions
+## 🤖 Using Claude for Learning
 
-This project is designed for **interactive learning with Claude**! Whether you're on your laptop, CLI, or different device, Claude can quickly jump into helping you.
-
-### Quick Start with Claude
-
-Just open a conversation and say:
+This project is designed for **interactive learning with Claude**. Just describe what you want to learn:
 
 ```
-"Hi Claude! Let's start Sprint Day 1"
+"Claude, help me understand React hooks in the CRAWL phase"
+"Explain how the Next.js App Router works"
+"Walk me through the NestJS backend structure"
 ```
 
-or
-
-```
-"Claude, I want to practice Next.js Server Components from the WALK phase"
-```
-
-Claude has context about:
-- ✅ All learning phases (CRAWL, WALK, RUN, OPTIMIZE)
-- ✅ Both interview tracks (Sprint & Deep Dive)
-- ✅ Every topic and where to find it
-- ✅ How to run interactive study sessions
-
-### Command Reference
-
-Check **[`.claude/quick-commands.md`](.claude/quick-commands.md)** for ready-to-use commands like:
-
-**Interview Prep:**
-- `"Let's start Sprint Day 1"`
-- `"Quiz me on Deep Dive Day 3 questions"`
-- `"Mock interview me on system design"`
-
-**Learning:**
-- `"Teach me CRAWL phase fundamentals"`
-- `"Explain Next.js from WALK phase"`
-- `"How does CQRS work in RUN phase?"`
-
-**Practice:**
-- `"Design an e-commerce checkout flow"`
-- `"Review this code with me"`
-- `"Let's practice the Day 2 exercises"`
-
-### What Claude Can Do
-
-Claude will:
-- 🎯 Guide you through interactive exercises
-- 💡 Ask probing questions like an interviewer
-- 📝 Review your code and provide feedback
-- 🎭 Simulate mock interviews
-- 🧠 Explain concepts with examples
-- 🔗 Connect topics across phases
-
-### Context Files
-
-The `.claude/` directory contains:
-- **project-context.md** - Full project overview for Claude
-- **quick-commands.md** - Command reference for you
-- **README.md** - How the context system works
-
-These files ensure Claude always understands the project structure and can help you effectively, no matter which device you're using!
+Claude can:
+- Guide you through each phase
+- Explain concepts with examples
+- Review your code and provide feedback
+- Help debug issues
+- Discuss architectural decisions
 
 ---
 

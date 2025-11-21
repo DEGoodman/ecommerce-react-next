@@ -1,8 +1,12 @@
-.PHONY: help install dev build clean docker-up docker-down docker-logs docker-clean db-migrate db-seed test
+.PHONY: help install dev build clean docker-up docker-down docker-logs docker-clean db-migrate db-seed test crawl walk-run
 
 # Default target
 help:
 	@echo "E-Commerce Learning Platform - Available Commands"
+	@echo ""
+	@echo "Learning Phases:"
+	@echo "  make crawl            - Start CRAWL phase (React + Vite + Express)"
+	@echo "  make walk-run         - Start WALK/RUN phase (Next.js + NestJS)"
 	@echo ""
 	@echo "Installation & Setup:"
 	@echo "  make install          - Install all dependencies"
@@ -32,6 +36,25 @@ help:
 	@echo "Build & Clean:"
 	@echo "  make build            - Build all projects"
 	@echo "  make clean            - Clean all build artifacts"
+
+# Learning Phases
+crawl:
+	@echo "🐛 Starting CRAWL phase (React + Vite + Express)..."
+	cd apps/crawl && docker compose up
+	@echo "✅ CRAWL services started!"
+	@echo "   Frontend: http://localhost:3000"
+	@echo "   Backend:  http://localhost:3001"
+
+crawl-down:
+	@echo "🛑 Stopping CRAWL services..."
+	cd apps/crawl && docker compose down
+
+walk-run:
+	@echo "🏃 Starting WALK/RUN phase (Next.js + NestJS)..."
+	docker-compose up -d
+	@echo "✅ Services started!"
+	@echo "   Frontend: http://localhost:3000"
+	@echo "   Backend:  http://localhost:3001"
 
 # Installation
 install:
