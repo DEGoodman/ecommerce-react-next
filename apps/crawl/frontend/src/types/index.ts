@@ -3,7 +3,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  category: string;
+  category: Category;
   image: string;
   stock: number;
 }
@@ -21,3 +21,8 @@ export interface CartContextType {
   clearCart: () => void;
   total: number;
 }
+
+export type Category = "electronics"
+| "sports"
+| "home"
+| "accessories"

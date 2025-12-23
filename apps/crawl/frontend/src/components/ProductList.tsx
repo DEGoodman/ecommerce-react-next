@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Product } from '../types';
+import { Product, Category } from '../types';
 import { ProductCard } from './ProductCard';
 
 export function ProductList() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [category, setCategory] = useState<string>('all');
+  const [category, setCategory] = useState<Category | undefined>(undefined);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -24,11 +24,11 @@ export function ProductList() {
     fetchProducts();
   }, []);
 
-  const categories = ['all', ...new Set(products.map((p) => p.category))];
+  const categories = Array.from(new Set(products.map((p) => p.category))) as Category[];
 
-  const filteredProducts = category === 'all'
-    ? products
-    : products.filter((p) => p.category === category);
+  const filteredProducts = category
+    ? products.filter((p) => p.category === category)
+    : products;
 
   if (loading) return <div className="loading">Loading products...</div>;
   if (error) return <div className="error">Error: {error}</div>;
@@ -36,7 +36,14 @@ export function ProductList() {
   return (
     <div className="product-list">
       <div className="filters">
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+        <select
+          value={category ?? ''}
+          onChange={(e) => {
+            const value = e.target.value;
+            setCategory(value === '' ? undefined : value as Category);
+          }}
+        >
+          <option value="">All</option>
           {categories.map((cat) => (
             <option key={cat} value={cat}>
               {cat.charAt(0).toUpperCase() + cat.slice(1)}
