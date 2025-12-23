@@ -148,6 +148,65 @@ Visit:
 
 ---
 
+## 🗂️ Repository Navigation (Branches & Tags)
+
+This repository uses a **tag-based navigation system** for learning. You can jump to any point in the curriculum!
+
+### Branches
+
+| Branch | Purpose |
+|--------|---------|
+| `main` | Clean baseline + documentation (start here) |
+| `docs/annotated-walkthrough` | Reference: Codebase with detailed inline comments explaining React/TypeScript concepts |
+| `learning/progress-clean` | Active learning branch (exercise solutions, no annotation clutter) |
+
+### Tags - Infrastructure
+
+| Tag | Description | Use When |
+|-----|-------------|----------|
+| `v0.1-clean-baseline` | Clean CRAWL scaffolding | You want a completely fresh start |
+| `v0.2-annotated-baseline` | Codebase with educational comments | You want to read annotated code |
+| `v0.3-docker-fixed` | Docker networking fixed, app works | You want a working app baseline |
+
+### Tags - Learning Milestones
+
+| Tag | Description | Use When |
+|-----|-------------|----------|
+| `1-1-start` | Module 1, Exercise 1: Ready to begin | Starting the Category type exercise |
+| `1-1-complete` | Module 1, Exercise 1: Completed | See the solution or continue to next exercise |
+| `1-2-start` | Module 1, Exercise 2: Ready to begin | Starting the ProductGrid exercise |
+| `1-2-complete` | Module 1, Exercise 2: Completed | *(coming soon)* |
+
+### How to Navigate
+
+```bash
+# Clone the repo (gets main with docs)
+git clone <repo-url>
+cd ecommerce-learning-platform
+
+# See all available tags
+git tag
+
+# Jump to a specific point
+git checkout 1-1-start      # Begin Exercise 1
+git checkout 1-1-complete   # See the solution
+
+# View annotated code for reference
+git checkout docs/annotated-walkthrough
+
+# Return to main
+git checkout main
+```
+
+### 📖 40-Hour Learning Plan
+
+See **[LEARNING-PLAN.md](LEARNING-PLAN.md)** for the complete structured curriculum:
+- **Module 1**: React + TypeScript (14 hours)
+- **Module 2**: Next.js Deep Dive (20 hours)
+- **Module 3**: NestJS Essentials (6 hours)
+
+---
+
 ## 🏗️ Project Structure
 
 ```
