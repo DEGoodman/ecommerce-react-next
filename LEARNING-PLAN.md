@@ -14,6 +14,54 @@ A focused curriculum for learning React, TypeScript, and Next.js through buildin
 
 ---
 
+## Learning Tracks
+
+This curriculum offers two learning tracks:
+
+### Guided Track (`learning/guided` branch)
+- Inline TODO comments and hints in the code
+- Step-by-step guidance for each exercise
+- Good for: First time through, learning new concepts
+
+```bash
+git checkout learning/guided              # Switch to guided branch
+git checkout guided-1-1-start             # Start at Hour 1-2
+# Complete exercise, then:
+git diff guided-1-1-complete              # Compare with solution
+```
+
+### Challenge Track (`learning/progress-clean` branch)
+- User-story style requirements
+- No inline hints - figure it out yourself
+- Good for: Reinforcement, testing your understanding
+
+```bash
+git checkout learning/progress-clean      # Switch to challenge branch
+git checkout 1-1-start                    # Start at Hour 1-2
+```
+
+### Tag Naming Convention
+
+| Track | Start Tag | Complete Tag |
+|-------|-----------|--------------|
+| Guided | `guided-1-1-start` | `guided-1-1-complete` |
+| Challenge | `1-1-start` | `1-1-complete` |
+
+### Tracking Your Progress
+
+Use the `.learning-progress` file in the project root to track where you left off:
+
+```
+# .learning-progress
+track: guided
+last_completed: guided-1-2
+notes: Starting React components exercise
+```
+
+This file is gitignored so it stays local to your machine.
+
+---
+
 ## Module 1: React + TypeScript Foundations (14 hours)
 
 **Location:** `apps/crawl/frontend/`

@@ -46,3 +46,7 @@ postgres-data/
 # Misc
 .turbo
 .cache
+tmp/
+
+# Personal learning progress (not tracked in git)
+.learning-progress
