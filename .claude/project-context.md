@@ -17,26 +17,24 @@ This is an **E-Commerce Learning Platform** designed as a progressive learning j
 
 ```
 ecommerce-learning-platform/
-├── CRAWL-WALK-RUN.md              # Main learning journey guide
-├── INTERVIEW-SPRINT.md             # 3-day interview prep (6 hours)
-├── INTERVIEW-DEEP-DIVE.md          # 7-day interview prep (15-20 hours)
+├── LEARNING-PLAN.md               # 40-hour curriculum guide
 ├── README.md                       # Project overview
-├── docs/
-│   ├── phases/
-│   │   ├── 01-crawl.md            # React/TypeScript fundamentals
-│   │   ├── 02-walk.md             # Next.js, auth, state management
-│   │   ├── 03-run.md              # NestJS microservices, GraphQL
-│   │   ├── 04-optimize.md         # Performance optimization
-│   │   └── 04-optimize-mcmaster.md # McMaster-Carr case study
-│   ├── 00-architecture.md
-│   ├── 01-frontend.md
-│   ├── 02-backend.md
-│   ├── 03-database.md
-│   └── 04-docker.md
+├── Makefile                        # Exercise and dev commands
+├── exercises/                      # Exercise templates (guided + challenge tracks)
+│   ├── manifest.json              # Exercise metadata
+│   └── module-1/                  # React/TypeScript exercises
+│       ├── 1-1-typescript-basics/
+│       ├── 1-2-components-props/
+│       └── ...
+├── scripts/
+│   └── exercise.sh                # Exercise management script
 ├── apps/
-│   ├── frontend/                   # Next.js 14 application
-│   └── backend/                    # NestJS application
-└── .claude/                        # Context files (this directory)
+│   ├── crawl/                     # CRAWL phase (React + Vite)
+│   │   ├── frontend/              # React frontend
+│   │   └── backend/               # Express backend
+│   ├── frontend/                  # Next.js 14 application (WALK phase)
+│   └── backend/                   # NestJS application (RUN phase)
+└── .claude/                       # Context files (this directory)
 ```
 
 ---
@@ -372,7 +370,21 @@ You:
 
 ## Learning Progress Tracking
 
-Always check `.learning-progress` at the start of sessions to see current exercise status. Keep this file updated as exercises are completed.
+Always check `.learning-progress` at the start of sessions to see current exercise status.
+
+### Exercise Commands
+```bash
+make exercise-list          # List all exercises
+make exercise-start E=1-5 T=guided   # Start exercise
+make exercise-complete E=1-5         # Mark complete
+make exercise-status        # Show current progress
+```
+
+### How Exercises Work
+- Exercises are in `exercises/module-X/` as markdown files with embedded code
+- `make exercise-start` copies starter code to target location
+- For exercises 2+, it first applies completed code from previous exercises
+- Guided track has hints; Challenge track has only requirements
 
 ---
 

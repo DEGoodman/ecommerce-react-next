@@ -16,49 +16,57 @@ A focused curriculum for learning React, TypeScript, and Next.js through buildin
 
 ## Learning Tracks
 
-This curriculum offers two learning tracks:
+This curriculum offers two learning tracks, managed through make commands:
 
-### Guided Track (`learning/guided` branch)
-- Inline TODO comments and hints in the code
-- Step-by-step guidance for each exercise
+### Guided Track
+- Step-by-step hints and pseudocode guidance
+- Concept explanations inline with code
 - Good for: First time through, learning new concepts
 
-```bash
-git checkout learning/guided              # Switch to guided branch
-git checkout guided-1-1-start             # Start at Hour 1-2
-# Complete exercise, then:
-git diff guided-1-1-complete              # Compare with solution
-```
-
-### Challenge Track (`learning/progress-clean` branch)
-- User-story style requirements
-- No inline hints - figure it out yourself
+### Challenge Track
+- User-story style requirements only
+- No hints - figure it out yourself
 - Good for: Reinforcement, testing your understanding
 
+### Getting Started
+
 ```bash
-git checkout learning/progress-clean      # Switch to challenge branch
-git checkout 1-1-start                    # Start at Hour 1-2
+# List all available exercises
+make exercise-list
+
+# Start an exercise (guided track)
+make exercise-start E=1-1 T=guided
+
+# Start an exercise (challenge track)
+make exercise-start E=1-1 T=challenge
+
+# Mark exercise complete and see next steps
+make exercise-complete E=1-1
+
+# Reset to starter code if needed
+make exercise-reset E=1-1 T=guided
+
+# Check your current progress
+make exercise-status
 ```
 
-### Tag Naming Convention
+### How It Works
 
-| Track | Start Tag | Complete Tag |
-|-------|-----------|--------------|
-| Guided | `guided-1-1-start` | `guided-1-1-complete` |
-| Challenge | `1-1-start` | `1-1-complete` |
+1. `make exercise-start` copies starter code into place
+2. For exercises 1-2+, it first applies completed code from previous exercises
+3. You implement the exercise in the target files
+4. `make exercise-complete` marks it done and suggests the next one
 
 ### Tracking Your Progress
 
-Use the `.learning-progress` file in the project root to track where you left off:
+Progress is tracked in `.learning-progress` (gitignored, local to your machine):
 
 ```
-# .learning-progress
 track: guided
-last_completed: guided-1-2
-notes: Starting React components exercise
+current_exercise: 1-2
+module: 1
+last_completed: 1-1
 ```
-
-This file is gitignored so it stays local to your machine.
 
 ---
 
