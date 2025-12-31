@@ -1,0 +1,72 @@
+{
+  "version": "1.0",
+  "modules": {
+    "1": {
+      "title": "React + TypeScript Foundations",
+      "hours": "1-14",
+      "location": "apps/crawl/frontend",
+      "exercises": {
+        "1-1": {
+          "title": "TypeScript Basics",
+          "hours": "1-2",
+          "goal": "Create a Category type for type-safe filtering",
+          "files": [
+            { "target": "src/types/index.ts", "template": "types.ts" },
+            { "target": "src/components/ProductList.tsx", "template": "ProductList.tsx" }
+          ]
+        },
+        "1-2": {
+          "title": "Components & Props",
+          "hours": "3-4",
+          "goal": "Create a ProductDisplay component with layout options",
+          "files": [
+            { "target": "src/components/ProductDisplay.tsx", "template": "ProductDisplay.tsx" }
+          ]
+        },
+        "1-3": {
+          "title": "State with useState",
+          "hours": "5-6",
+          "goal": "Add favorites toggle to ProductCard",
+          "files": [
+            { "target": "src/components/ProductCard.tsx", "template": "ProductCard.tsx" }
+          ]
+        },
+        "1-4": {
+          "title": "useEffect & Data Fetching",
+          "hours": "7-8",
+          "goal": "Create a reusable useFetch hook",
+          "files": [
+            { "target": "src/hooks/useFetch.ts", "template": "useFetch.ts" }
+          ]
+        },
+        "1-5": {
+          "title": "Context API",
+          "hours": "9-10",
+          "goal": "Create a RecentlyViewed context",
+          "files": [
+            { "target": "src/context/RecentlyViewedContext.tsx", "template": "RecentlyViewedContext.tsx" }
+          ]
+        },
+        "1-6": {
+          "title": "Custom Hooks",
+          "hours": "11-12",
+          "goal": "Create useProducts, useDebounce, useLocalStorage hooks",
+          "files": [
+            { "target": "src/hooks/useProducts.ts", "template": "useProducts.ts" },
+            { "target": "src/hooks/useDebounce.ts", "template": "useDebounce.ts" },
+            { "target": "src/hooks/useLocalStorage.ts", "template": "useLocalStorage.ts" }
+          ]
+        },
+        "1-7": {
+          "title": "Patterns & Review",
+          "hours": "13-14",
+          "goal": "Build CheckoutForm and ProductDetail components",
+          "files": [
+            { "target": "src/components/CheckoutForm.tsx", "template": "CheckoutForm.tsx" },
+            { "target": "src/components/ProductDetail.tsx", "template": "ProductDetail.tsx" }
+          ]
+        }
+      }
+    }
+  }
+}

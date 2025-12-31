@@ -1,8 +1,16 @@
-.PHONY: help install dev build clean docker-up docker-down docker-logs docker-clean db-migrate db-seed test crawl walk-run
+.PHONY: help install dev build clean docker-up docker-down docker-logs docker-clean db-migrate db-seed test crawl walk-run exercise exercise-start exercise-list exercise-status
 
 # Default target
 help:
 	@echo "E-Commerce Learning Platform - Available Commands"
+	@echo ""
+	@echo "Exercises:"
+	@echo "  make exercise-start E=1-5 T=guided   - Start exercise (guided track)"
+	@echo "  make exercise-complete E=1-5         - Mark exercise complete"
+	@echo "  make exercise-reset E=1-5            - Reset to starter code"
+	@echo "  make exercise-clean E=1-5            - Remove exercise files"
+	@echo "  make exercise-list                   - List all exercises"
+	@echo "  make exercise-status                 - Show current progress"
 	@echo ""
 	@echo "Learning Phases:"
 	@echo "  make crawl            - Start CRAWL phase (React + Vite + Express)"
@@ -135,3 +143,25 @@ clean:
 	@echo "🧹 Cleaning build artifacts..."
 	pnpm run clean
 	rm -rf .next dist
+
+# Exercise Management
+E ?= 1-1
+T ?= guided
+
+exercise-start:
+	@./scripts/exercise.sh start $(E) --$(T)
+
+exercise-complete:
+	@./scripts/exercise.sh complete $(E)
+
+exercise-reset:
+	@./scripts/exercise.sh reset $(E) --$(T)
+
+exercise-clean:
+	@./scripts/exercise.sh clean $(E)
+
+exercise-list:
+	@./scripts/exercise.sh list
+
+exercise-status:
+	@./scripts/exercise.sh status
