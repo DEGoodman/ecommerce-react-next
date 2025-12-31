@@ -67,6 +67,126 @@
           ]
         }
       }
+    },
+    "2": {
+      "title": "Next.js Deep Dive",
+      "hours": "15-34",
+      "location": "apps/frontend",
+      "exercises": {
+        "2-1": {
+          "title": "Next.js Fundamentals",
+          "hours": "15-16",
+          "goal": "Create products page with App Router",
+          "files": [
+            { "target": "src/app/products/page.tsx", "template": "page.tsx" }
+          ]
+        },
+        "2-2": {
+          "title": "Server vs Client Components",
+          "hours": "17-18",
+          "goal": "Split components to minimize client JavaScript",
+          "files": [
+            { "target": "src/components/ProductGrid.tsx", "template": "ProductGrid.tsx" }
+          ]
+        },
+        "2-3": {
+          "title": "Dynamic Routes & Data Fetching",
+          "hours": "19-20",
+          "goal": "Create dynamic product detail pages",
+          "files": [
+            { "target": "src/app/products/[id]/page.tsx", "template": "page.tsx" }
+          ]
+        },
+        "2-4": {
+          "title": "API Routes & Server Actions",
+          "hours": "21-22",
+          "goal": "Create cart API and Server Actions",
+          "files": [
+            { "target": "src/app/api/cart/route.ts", "template": "route.ts" },
+            { "target": "src/app/actions/cart.ts", "template": "actions.ts" }
+          ]
+        },
+        "2-5": {
+          "title": "State Management",
+          "hours": "23-24",
+          "goal": "Implement Zustand cart store",
+          "files": [
+            { "target": "src/lib/store.ts", "template": "store.ts" }
+          ]
+        },
+        "2-6": {
+          "title": "Forms & Validation",
+          "hours": "25-26",
+          "goal": "Build checkout form with Zod validation",
+          "files": [
+            { "target": "src/components/CheckoutForm.tsx", "template": "CheckoutForm.tsx" }
+          ]
+        },
+        "2-7": {
+          "title": "Authentication",
+          "hours": "27-28",
+          "goal": "Implement NextAuth.js authentication",
+          "files": [
+            { "target": "src/lib/auth.ts", "template": "auth.ts" }
+          ]
+        },
+        "2-8": {
+          "title": "Styling & UI Patterns",
+          "hours": "29-30",
+          "goal": "Build polished UI with Tailwind",
+          "files": [
+            { "target": "src/components/ProductCard.tsx", "template": "ProductCard.tsx" }
+          ]
+        },
+        "2-9": {
+          "title": "Error Handling & Loading States",
+          "hours": "31-32",
+          "goal": "Add error boundaries and loading skeletons",
+          "files": [
+            { "target": "src/app/products/error.tsx", "template": "error.tsx" },
+            { "target": "src/app/products/loading.tsx", "template": "loading.tsx" }
+          ]
+        },
+        "2-10": {
+          "title": "Advanced Patterns",
+          "hours": "33-34",
+          "goal": "Implement middleware, Image optimization, metadata",
+          "files": [
+            { "target": "middleware.ts", "template": "middleware.ts" }
+          ]
+        }
+      }
+    },
+    "3": {
+      "title": "NestJS Essentials",
+      "hours": "35-40",
+      "location": "apps/backend",
+      "exercises": {
+        "3-1": {
+          "title": "NestJS Architecture",
+          "hours": "35-36",
+          "goal": "Understand Modules, Controllers, Services",
+          "files": [
+            { "target": "src/products/products.module.ts", "template": "products.module.ts" }
+          ]
+        },
+        "3-2": {
+          "title": "REST API Design",
+          "hours": "37-38",
+          "goal": "Create product reviews endpoint",
+          "files": [
+            { "target": "src/reviews/reviews.controller.ts", "template": "reviews.controller.ts" }
+          ]
+        },
+        "3-3": {
+          "title": "Database & TypeORM",
+          "hours": "39-40",
+          "goal": "Create Order entity with relationships",
+          "files": [
+            { "target": "src/orders/order.entity.ts", "template": "order.entity.ts" }
+          ]
+        }
+      }
     }
   }
 }
