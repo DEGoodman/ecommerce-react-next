@@ -370,6 +370,12 @@ You:
 
 ---
 
+## Learning Progress Tracking
+
+Always check `.learning-progress` at the start of sessions to see current exercise status. Keep this file updated as exercises are completed.
+
+---
+
 ## Remember
 
 - **Be conversational** - This is interactive learning, not lecturing
